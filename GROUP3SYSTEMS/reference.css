@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@700&family=Oswald:wght@500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD700;
+    color: #333333;
+    transition: background-color 0.5s ease;
+}
+
+header {
+    background: linear-gradient(135deg, #FFDD44, #FFB300, #FFA500);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    outline: none;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #000000;
+        text-shadow: 0 0 5px #FF8C00,
+                     -1px 0 5px #FF8C00,
+                     1px 0 5px #FF8C00;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #000000;
+        text-shadow: 0 0 10px #FF8C00,
+                     -1px 0 15px #FF8C00,
+                     1px 0 15px #FF8C00;
+    }
+}
+
+.logo-image {
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+.text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FF8C00;
+    }
+    25% {
+        text-shadow: 0 0 5px #FF8C00, 0 0 10px #FF8C00, 0 0 15px #FF8C00, 0 0 20px #FF4500;
+    }
+    50% {
+        text-shadow: 0 0 5px #FF4500, 0 0 10px #FF4500, 0 0 15px #FF4500, 0 0 20px #FF0000;
+    }
+    75% {
+        text-shadow: 0 0 5px #FF0000, 0 0 10px #FF0000, 0 0 15px #FF0000, 0 0 20px #FF6347;
+    }
+    100% {
+        text-shadow: 0 0 5px #FF6347, 0 0 10px #FF6347, 0 0 15px #FF6347, 0 0 20px #FFD700;
+    }
+}
+
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 25px;
+    padding: 5px;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 3px 0;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.popup-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    background-color: #FF8C00;
+    border: 1px solid #FFA500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.popup-menu a {
+    color: #FFFFFF;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+}
+.popup-menu a:hover,
+.popup-menu a.active {
+  color: black;
+  background-color: yellow;
+  border-bottom: 3px solid orangered;
+}
+.popup-menu a:hover {
+    background-color: #FFA500;
+}
+
+#menu-toggle:checked + .menu-button + .popup-menu {
+    opacity: 1;
+    max-height: 500px;
+}
+
+
+
+footer {
+    background-color: #FF8C00;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    bottom:0;
+    width :100%;
+    position: fixed;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotline {
+    margin: 1px 0;
+}
+
+.hotline a {
+    color: #FFFFFF; 
+    text-decoration: underline; 
+}
+
+.social-icons {
+    margin-top: 1px;
+}
+
+.social-logo {
+    width: 30px; 
+    height: auto; 
+    margin: 1px;
+    transition: transform 0.3s;
+}
+
+.social-logo:hover {
+    transform: scale(1.1); 
+}
+
+.reference-layout {
+    text-align: center;
+    margin: 50px auto;
+    font-family: 'Oswald', sans-serif;
+}
+
+.news-links {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.news-links li {
+    margin: 10px 0; 
+}
+
+.news-links a {
+    text-decoration: none; 
+    color: #000; 
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.news-links a:hover {
+    color: #FF8C00;
+}
